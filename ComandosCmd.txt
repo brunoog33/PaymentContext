@@ -1,0 +1,10 @@
+md Payment.Domain -- Cria uma pasta com este nome
+dotnet new sln -- cria uma solução do visual studio
+cd Payment.Domain -- entra no diretório
+dotnet new classlib -- projeto para virar dll após compilado
+dotnet new mstest -- cria um projeto de teste
+dotnet sln add PaymentContext.Domain/PaymentContext.Domain.csproj -- Adicionar a sln o projeto
+dotnet restore -- restaurar os pacotes
+dotnet build -- compilar os projetos
+dotnet add reference ../PaymentContext.Shared/PaymentContext.Shared.csproj -- Adicionar referencia de projeto
+
