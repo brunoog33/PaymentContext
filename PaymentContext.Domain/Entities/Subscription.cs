@@ -21,7 +21,14 @@ namespace PaymentContext.Domain.Entities
         public DateTime LastDateUpdate { get; private set; }
         public DateTime? ExpireDate { get; private set; }
         public bool Active { get; private set; }
-        public IReadOnlyCollection<Payment> Payments { get; set; }
+        public IReadOnlyCollection<Payment> Payments 
+        { 
+            get 
+            {
+                return _payments.ToArray();
+            }; 
+            private set; 
+        }
 
         public void AddPayment(Payment payment)
         {
