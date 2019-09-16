@@ -1,6 +1,7 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PaymentContext.Domain.Entities;
+using PaymentContext.Domain.Enuns;
 using PaymentContext.Domain.ValueObject;
 
 namespace PaymentContext.Tests
@@ -30,7 +31,7 @@ namespace PaymentContext.Tests
         public void ShouldReturnErrorWhenHadActiveSubscription()
         {
             var payment = new PayPalPayment("12345678", DateTime.Now, DateTime.Now.AddDays(5), 
-                10, 10, "Wayne Corp", _document, _adress, _email);
+                10, 10, _email, "Wayne Corp", _document, _adress);
             
             _subscription.AddPayment(payment);
             _student.AddSubscription(_subscription);
@@ -51,12 +52,12 @@ namespace PaymentContext.Tests
         public void ShouldReturnSucessWhenAddSubscription()
         {
             var payment = new PayPalPayment("12345678", DateTime.Now, DateTime.Now.AddDays(5), 
-                10, 10, "Wayne Corp", _document, _adress, _email);
+                10, 10, _email, "Wayne Corp", _document, _adress);
             
             _subscription.AddPayment(payment);
             _student.AddSubscription(_subscription);
 
-            Assert.IsTrue(_student.IsValid);
+            Assert.IsTrue(_student.Valid);
         }
         
     }
