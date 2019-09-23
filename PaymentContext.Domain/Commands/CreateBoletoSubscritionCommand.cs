@@ -19,8 +19,8 @@ namespace PaymentContext.Domain.Commands
         public DateTime ExpireDate { get; set; }
         public decimal Total { get; set; }
         public decimal TotalPaid { get; set; }
-        public decimal Payer { get; set; }
-        public decimal PayerEmail { get; set; }
+        public string Payer { get; set; }
+        public string PayerEmail { get; set; }
         public string PayerDocument { get; set; }
         public EDocumentType PayerDocumentType { get; set; }
         public string Street { get; set; }
